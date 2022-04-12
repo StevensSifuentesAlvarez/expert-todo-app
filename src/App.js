@@ -13,6 +13,8 @@ import TodoList from './components/TodoList/TodoList'
 import { TodoContex } from './context'
 
 import './App.css'
+import TodoCounter from './components/TodoCounter/TodoCounter'
+import TodoSearch from './components/TodoSearch/TodoSearch'
 
 const App = () => {
   const { searchedTodos, openModal } = useContext(TodoContex)
@@ -44,8 +46,12 @@ const App = () => {
   // saveLocalStorage(tasks)
   
   return (
-    <div>
-      <Header />
+    <>
+      <Header>
+        <TodoCounter />
+        {/* FilterTodos */}
+        <TodoSearch />
+      </Header>
 
       <TodoList>
         { searchedTodos.map(todo => (
@@ -75,7 +81,7 @@ const App = () => {
         setTasks={setTasks} 
         completedTasks={completedTasks}
         saveLocalStorage={saveLocalStorage}/> */}
-    </div>
+    </>
   )
 }
 
