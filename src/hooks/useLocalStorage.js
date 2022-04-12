@@ -12,8 +12,10 @@ export const useLocalStorage = (itemName, initialValue) => {
     
     useEffect(() => {
         console.log('useEffect')
-        setTodos(loadDatabase);
-        setLoading(false);
+        setTimeout(() => {
+            setTodos(loadDatabase)
+            setLoading(false)
+        }, 3000)
     }, [])
 
     const saveTodos = (newItem) => {

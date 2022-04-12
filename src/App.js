@@ -18,7 +18,7 @@ import TodoSearch from './components/TodoSearch/TodoSearch'
 
 const App = () => {
   const { searchedTodos, openModal } = useContext(TodoContex)
-  console.log(searchedTodos)
+  console.log('From App', searchedTodos)
   // const [completedTasks, setCompletedTasks] = useState(true)
   // const namedb = 'Tasks'
   // console.log(namedb)
@@ -53,7 +53,7 @@ const App = () => {
         <TodoSearch />
       </Header>
 
-      <TodoList>
+      <TodoList >
         { searchedTodos.map(todo => (
                           <TodoItem 
                             key={todo.id}
