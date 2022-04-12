@@ -1,0 +1,49 @@
+.todoItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-color: #17274e;
+    border-radius: 10px;
+    margin: 10px 8%;
+    padding: 0 10px;
+    height: 50px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.iconCheckActive {
+    color: greenyellow;
+    cursor: pointer;
+}
+
+.todoItemCompleted {
+    text-decoration: line-through;
+    color: #515666;
+}
+
+.todoCheck:hover {
+    cursor: pointer;
+    color: greenyellow;
+}
+
+.deleteTodo:hover {
+    cursor: pointer;
+    color: red;
+}
+
+.updateTodo {
+    margin-right: 10px;
+}
+
+.updateTodo:hover {
+    cursor: pointer;
+    color: yellow;
+}
+
+p {
+    -webkit-user-select: none; /* Safari */        
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+    overflow: hidden;
+    max-width: 90%;
+}

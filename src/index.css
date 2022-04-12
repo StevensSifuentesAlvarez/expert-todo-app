@@ -9,11 +9,11 @@
 #root {
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  justify-content: center;
   padding: 50px 0;
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  background-color: #121f3d;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
