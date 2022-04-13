@@ -12,7 +12,7 @@ export const HeaderContainer = styled.header`
 export const Subcontainer = styled.div`
     background: #DCE5E1;
     border-radius: 20px;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    box-shadow: 10px 0px 20px rgba(0, 0, 0, .5);
     padding: 30px;
     margin: 10px auto;
     transition: .2s all ease-in;
@@ -26,6 +26,7 @@ export const Subcontainer = styled.div`
     }
 
     @media screen and (min-width: 1200px){
+        box-shadow: 20px 0px 20px rgba(0, 0, 0, .5);
         width: 60%;
     }
 `

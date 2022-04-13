@@ -16,7 +16,7 @@ import { Container } from './styles'
 
 const App = () => {
   const { searchedTodos, openModal } = useContext(TodoContex)
-  console.log('From App', searchedTodos)
+  
   return (
     <Container>
       <div>

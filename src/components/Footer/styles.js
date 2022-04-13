@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const FooterContainer = styled.footer`
     background: #DCE5E1;
-    box-shadow: 5px 0px 10px rgba(0, 0, 0, .5);
+    box-shadow: 10px 0px 10px rgba(0, 0, 0, .5);
     width: 40%;
     height: 180px;
     border-radius: 0 80% 0 0;
@@ -24,6 +24,7 @@ export const FooterContainer = styled.footer`
     
     @media screen and (min-width: 800px) {
         border-radius: 0 20px 20px 0;
+        box-shadow: 5px 0px 10px rgba(0, 0, 0, .5);
         height: 90%;
         width: 70px;
         margin: auto 0;
