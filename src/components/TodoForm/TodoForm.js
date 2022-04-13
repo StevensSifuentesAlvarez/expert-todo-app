@@ -34,7 +34,7 @@ const TodoForm = () => {
                 value={ newTodoValue }
                 onChange={ handleChange }
                 onKeyDown={ handleModal }
-                placeholder='Enter you new Todo'/>
+                placeholder='Escribe tu nuevo TODO'/>
             <div>
                 <Button
                     cancel

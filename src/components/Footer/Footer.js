@@ -12,7 +12,7 @@ const Footer = () => {
     <FooterContainer>
       <ul>
         <li>
-          <a href="https://github.com/StevensSifuentesAlvarez" target='__blank'> 
+          <a href="https://github.com/stevensifuentes" target='__blank'> 
             <SiGithub style={icon}/>
           </a>
         </li>
@@ -22,7 +22,7 @@ const Footer = () => {
           </a>
         </li>
         <li>
-          <a href="https://www.linkedin.com/in/stevenssifuentesálvarez" target='__blank'> 
+          <a href="https://www.linkedin.com/in/stevenssifuentes" target='__blank'> 
             <SiLinkedin style={icon} />
           </a>
         </li>

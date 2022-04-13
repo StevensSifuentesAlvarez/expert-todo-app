@@ -8,7 +8,7 @@ const TodoSearch = () => {
     return (
       <Input 
         autoComplete='off'
-        placeholder='Buscar todo'
+        placeholder='Buscar TODO'
         value={ searchValue }
         onChange={(e) => setSearchValue(e.target.value) }
         disabled={ loading } />
