@@ -7,7 +7,7 @@ import TodoError from '../TodoError/TodoError'
 import { SectionList } from './styles'
 
 const TodoList = ({ children }) => {
-  const { loading, error, totalTodos, searchedTodos } = useContext(TodoContex)
+  const { loading, error, totalTodos, searchedTodos, stateFilter } = useContext(TodoContex)
 
   const onLoading = () => new Array(5).fill().map((item, index) => (
     <LoadingTodos key={index} />
@@ -18,7 +18,7 @@ const TodoList = ({ children }) => {
       {error && <TodoError />}
       {loading && onLoading()}
       {(!loading && !totalTodos) && <EmptyTodos />}
-      {(!!totalTodos && !searchedTodos.length) && <EmptySearchResults />}
+      {(!!totalTodos && !searchedTodos.length) && (!stateFilter.completed && !stateFilter.actives)  && <EmptySearchResults />}
       <ul>
         {children}
       </ul>

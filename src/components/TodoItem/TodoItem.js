@@ -1,20 +1,14 @@
 import React, { useContext, useState } from 'react'
 import { FaCheck, FaTrashAlt, FaPencilAlt } from 'react-icons/fa'
-
 import { TodoContex } from '../../context'
-import { useForm } from '../../hooks/useForm'
+import TodoUpdate from '../TodoUpdate/TodoUpdate'
 import styles from './TodoItem.module.css'
 
 const TodoItem = ({ todo:{ id, text, completed } }) => {
-    const [formValues, handleChange] = useForm({ newTodo: text })
+    const { completeTodo, deleteTodo } = useContext(TodoContex)
     const [edit, setEdit] = useState(false)
-    const { completeTodo, deleteTodo, updateTodo } = useContext(TodoContex)
     
-    const { newTodo } = formValues
-
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        updateTodo(id, newTodo)
+    const handleUpdate = () => {
         setEdit(!edit)
     }
 
@@ -25,26 +19,16 @@ const TodoItem = ({ todo:{ id, text, completed } }) => {
                 onClick={ () => completeTodo(id) } />
             {
                 (edit) ? 
-                    <form onSubmit={handleSubmit}>
-                        <input 
-                            style={{
-                                color: 'black'
-                            }}
-                            name='newTodo'
-                            value={ newTodo }
-                            onChange={ handleChange }/>
-                        <button type='submit'>Update</button>
-                    </form>
-                    
+                    <TodoUpdate setEdit={setEdit} text={text} id={id}/>
                 :
-                <p className={ completed ? styles.todoItemCompleted : '' }>
-                    { newTodo }
-                </p>
+                    <p className={ completed ? styles.todoItemCompleted : '' }>
+                        { text }
+                    </p>
             }
             <div>
                 <FaPencilAlt 
                     className={ styles.updateTodo }
-                    onClick={ () => setEdit(!edit) } />
+                    onClick={ handleUpdate } />
                 <FaTrashAlt 
                     className={ styles.deleteTodo } 
                     onClick={ () => deleteTodo(id) } />

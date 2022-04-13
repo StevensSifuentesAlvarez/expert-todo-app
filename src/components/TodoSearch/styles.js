@@ -12,6 +12,7 @@ export const Input = styled.input`
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: .8s;
     outline: none;
+    font-size: inherit;
 
     &:hover {
         box-shadow: 0px 0px 10px rgba(129, 150, 160, 0.6);

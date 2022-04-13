@@ -8,6 +8,7 @@ export const TodoProvider = ({ children }) => {
     const { todos, saveTodos, loading, error } = useLocalStorage('todos', [])
     const [searchValue, setSearchValue] = useState('')
     const [openModal, setOpenModal] = useState(false)
+    const [stateFilter, setStateFilter] = useState({ all: true, actives: false, completed: false })
 
     const completedTodos = todos.filter(todo => !!todo.completed).length
     const totalTodos = todos.length
@@ -15,8 +16,14 @@ export const TodoProvider = ({ children }) => {
     let searchedTodos = []
 
     if (!searchValue.length >= 1) {
-        searchedTodos = todos
-    } else {
+        if(stateFilter.actives) {
+            searchedTodos = todos.filter(todo => (todo.completed!==true))
+        }else if(stateFilter.completed) {
+            searchedTodos = todos.filter(todo => (todo.completed===true))
+        }else {
+            searchedTodos = todos
+        }
+    }else {
         searchedTodos = todos.filter(todo => {
             const todoText = todo.text.toLowerCase()
             const searchText = searchValue.toLowerCase()
@@ -24,6 +31,7 @@ export const TodoProvider = ({ children }) => {
         })
     }
 
+    console.log(stateFilter)
     const addTodo = (text) => {
         const newTodo = {
             id: uuidv4(),
@@ -70,7 +78,9 @@ export const TodoProvider = ({ children }) => {
             deleteTodo,
             updateTodo,
             openModal,
-            setOpenModal
+            setOpenModal,
+            setStateFilter,
+            stateFilter
         }}>
             { children }
         </TodoContex.Provider>

@@ -15,6 +15,7 @@ import { TodoContex } from './context'
 import './App.css'
 import TodoCounter from './components/TodoCounter/TodoCounter'
 import TodoSearch from './components/TodoSearch/TodoSearch'
+import FilterTodos from './components/FilterTodos/FilterTodos'
 
 const App = () => {
   const { searchedTodos, openModal } = useContext(TodoContex)
@@ -49,8 +50,8 @@ const App = () => {
     <>
       <Header>
         <TodoCounter />
-        {/* FilterTodos */}
         <TodoSearch />
+        <FilterTodos />
       </Header>
 
       <TodoList >
