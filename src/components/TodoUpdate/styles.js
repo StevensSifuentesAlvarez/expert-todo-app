@@ -6,8 +6,10 @@ export const FormUpdate = styled.form`
     height: auto;
     justify-content: end;
     padding: 10px;
-    margin-right: 40px;
     width: 80%;
+    @media screen and (min-width: 1200px){
+        margin-right: 40px;
+    }
 `
 
 export const Input = styled.input`

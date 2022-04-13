@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const LoadingContainer = styled.li`
-    background-color: #121f3d;
+    background: #1E1E24;
     position: relative;
     display: flex;
     justify-content: center;
@@ -25,7 +25,7 @@ export const Balls = styled.span`
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: #202d4e;
+    background: #DCE5E1;
     
     &:nth-child(1) {
         animation: opacitychange 1s ease-in-out 0.66s infinite;

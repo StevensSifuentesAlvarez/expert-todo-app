@@ -31,13 +31,11 @@ export const TodoProvider = ({ children }) => {
         })
     }
 
-    console.log(stateFilter)
     const addTodo = (text) => {
         const newTodo = {
             id: uuidv4(),
             text,
-            completed: false,
-            state: true
+            completed: false
         }
         saveTodos([...todos, newTodo])
     };
@@ -55,12 +53,6 @@ export const TodoProvider = ({ children }) => {
     }
 
     const deleteTodo = (id) => {
-        // Borrar la tarea cambiando el estado de la tarea
-        /* saveTodos(todos.map(todo => (
-            todo.id===id ? {...todo, state: false} : todo
-        ))) */
-
-        // Borrar la tarea fisicamente
         saveTodos(todos.filter(todo => todo.id!==id))
     };
 

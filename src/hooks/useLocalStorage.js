@@ -11,11 +11,10 @@ export const useLocalStorage = (itemName, initialValue) => {
     }
     
     useEffect(() => {
-        console.log('useEffect')
         setTimeout(() => {
             setTodos(loadDatabase)
             setLoading(false)
-        }, 3000)
+        }, 2000)
     }, [])
 
     const saveTodos = (newItem) => {
@@ -25,7 +24,7 @@ export const useLocalStorage = (itemName, initialValue) => {
         } catch(error) {
           setError(error)
         }
-    };
+    }
 
     return { 
         todos,

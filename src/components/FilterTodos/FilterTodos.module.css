@@ -12,6 +12,7 @@
 }
 
 .links {
+    color: rgba(0, 0, 0, .8);
     padding: 0 10px;
     list-style: none;
     transition: .2s all ease-in;
@@ -26,6 +27,7 @@
     padding: 0 10px;
     list-style: none;
     transition: .1s all ease;
-    border-bottom: 1px solid #61dafa;
+    border-bottom: 2px solid #022F3B;
     padding-bottom: 3px;
+    color: rgba(0, 0, 0, .6);
 }

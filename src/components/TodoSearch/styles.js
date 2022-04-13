@@ -6,8 +6,8 @@ export const Input = styled.input`
     text-align: center;
     height: 50px;
     border-radius: 10px;
-    background-color: #010f33;
-    color: #fff;
+    background: #1E1E24;
+    color: #DCE5E1;
     margin: 20px auto;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     transition: .8s;
