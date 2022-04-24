@@ -13,6 +13,7 @@ import TodoSearch from './components/TodoSearch/TodoSearch'
 
 import { TodoContex } from './context'
 import { Container } from './styles'
+import { ToastContainer } from 'react-toastify'
 
 const App = () => {
   const { searchedTodos, openModal } = useContext(TodoContex)
@@ -24,6 +25,7 @@ const App = () => {
           <TodoCounter />
           <TodoSearch />
           <FilterTodos />
+          <ToastContainer />
         </Header>
 
         <TodoList >

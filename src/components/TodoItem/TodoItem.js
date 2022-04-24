@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react'
 import { FaCheck, FaTrashAlt, FaPencilAlt } from 'react-icons/fa'
+import { toast } from 'react-toastify'
 import { TodoContex } from '../../context'
 import TodoUpdate from '../TodoUpdate/TodoUpdate'
 import styles from './TodoItem.module.css'
@@ -10,6 +11,14 @@ const TodoItem = ({ todo:{ id, text, completed } }) => {
     
     const handleUpdate = () => {
         setEdit(!edit)
+    }
+
+    const handleDelete = () => {
+        deleteTodo(id)
+        toast.warn('TODO eliminado...', {
+            position: "top-right",
+            autoClose: 2000,
+        });
     }
 
     return (
@@ -31,7 +40,7 @@ const TodoItem = ({ todo:{ id, text, completed } }) => {
                     onClick={ handleUpdate } />
                 <FaTrashAlt 
                     className={ styles.deleteTodo } 
-                    onClick={ () => deleteTodo(id) } />
+                    onClick={ handleDelete } />
             </div>
         </li>
     )

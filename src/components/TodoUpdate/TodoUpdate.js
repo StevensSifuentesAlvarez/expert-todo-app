@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
-import { AiOutlineReload } from "react-icons/ai";
+import { AiOutlineReload } from "react-icons/ai"
+import { toast } from 'react-toastify'
 import { TodoContex } from '../../context'
 import { useForm } from '../../hooks/useForm'
 import { Button, FormUpdate, Input } from './styles'
@@ -12,6 +13,10 @@ const TodoUpdate = ({ inputEdit, setEdit, text, id }) => {
         e.preventDefault()
         updateTodo(id, newTodo)
         setEdit(edit => !edit)
+        toast.success('¡TODO actualizado con éxito!', {
+            position: "top-right",
+            autoClose: 3000,
+        });
     }
 
     return (
